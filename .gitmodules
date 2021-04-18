@@ -1,0 +1,3 @@
+[submodule "TCGEngine2\\TCGEngine2\\vendor\\spdlog"]
+	path = TCGEngine2\\TCGEngine2\\vendor\\spdlog
+	url = https://github.com/gabime/spdlog
