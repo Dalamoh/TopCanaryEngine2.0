@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Folders
+TCGEngine2\bin
+TCGEngine2\bin-int
