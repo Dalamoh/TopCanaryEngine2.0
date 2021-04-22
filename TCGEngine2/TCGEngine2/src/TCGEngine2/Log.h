@@ -4,6 +4,7 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 
 
@@ -33,8 +34,8 @@ namespace TCGEngine2 {
 
 
 // Client log macros
-#define TCGE_CLIENT_TRACE(...) ::TCGEngine2::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define TCGE_CLIENT_INFO(...)  ::TCGEngine2::Log::GetClientLogger()->info(__VA_ARGS__)
-#define TCGE_CLIENT_WARN(...)  ::TCGEngine2::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define TCGE_CLIENT_ERROR(...) ::TCGEngine2::Log::GetClientLogger()->error(__VA_ARGS__)
-#define TCGE_CLIENT_FATAL(...) ::TCGEngine2::Log::GetClientLogger()->fatal(__VA_ARGS__)
+#define TCGE_TRACE(...) ::TCGEngine2::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define TCGE_INFO(...)  ::TCGEngine2::Log::GetClientLogger()->info(__VA_ARGS__)
+#define TCGE_WARN(...)  ::TCGEngine2::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define TCGE_ERROR(...) ::TCGEngine2::Log::GetClientLogger()->error(__VA_ARGS__)
+#define TCGE_FATAL(...) ::TCGEngine2::Log::GetClientLogger()->fatal(__VA_ARGS__)
