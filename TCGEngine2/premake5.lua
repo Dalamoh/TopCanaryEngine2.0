@@ -19,6 +19,9 @@ project "TCGEngine2"
 	targetdir ("bin/".. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/".. outputdir .. "/%{prj.name}")
 
+	pchheader "TCGEpch.h"
+	pchsource "TCGEngine2/src/TCGEpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

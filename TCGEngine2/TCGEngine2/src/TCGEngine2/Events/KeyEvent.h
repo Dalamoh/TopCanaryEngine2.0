@@ -2,7 +2,6 @@
 
 #include "TCGEngine2/Events/Event.h"
 
-#include <sstream>
 
 namespace TCGEngine2 {
 

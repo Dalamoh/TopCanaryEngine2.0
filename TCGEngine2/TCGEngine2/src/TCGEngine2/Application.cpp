@@ -1,3 +1,4 @@
+#include "TCGEpch.h"
 #include "Application.h"
 
 #include "TCGEngine2/Events/ApplicationEvent.h"

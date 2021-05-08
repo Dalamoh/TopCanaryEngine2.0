@@ -1,9 +1,7 @@
 #pragma once
 
+#include "TCGEpch.h"
 #include "TCGEngine2/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace TCGEngine2 {
 
