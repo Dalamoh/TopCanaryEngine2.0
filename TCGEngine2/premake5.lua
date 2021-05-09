@@ -11,6 +11,13 @@ workspace "TCGEngine2"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include dirs relative to root folder (sln dir)
+IncludeDir = {}
+IncludeDir["GLFW"] = "TCGEngine2/vendor/GLFW/include"
+
+include "TCGEngine2/vendor/GLFW"
+
+
 project "TCGEngine2"
 	location "TCGEngine2"
 	kind "SharedLib"
@@ -31,7 +38,13 @@ project "TCGEngine2"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

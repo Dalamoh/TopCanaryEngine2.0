@@ -1,6 +1,7 @@
 #pragma once
 #include "Core.h"
 #include "Events/Event.h"
+#include "Window.h"
 
 namespace TCGEngine2 {
 
@@ -10,6 +11,10 @@ namespace TCGEngine2 {
 		Application();
 		virtual ~Application();
 		void Run();
+
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 
