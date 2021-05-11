@@ -1,6 +1,8 @@
 #pragma once
 #include "Core.h"
 #include "Events/Event.h"
+#include "TCGEngine2/Events/ApplicationEvent.h"
+
 #include "Window.h"
 
 namespace TCGEngine2 {
@@ -12,7 +14,12 @@ namespace TCGEngine2 {
 		virtual ~Application();
 		void Run();
 
+
+		void OnEvent(Event& event);
 	private:
+
+		bool OnWindowClose(WindowCloseEvent& event);
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 	};
