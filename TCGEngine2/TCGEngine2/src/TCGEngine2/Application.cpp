@@ -20,6 +20,22 @@ namespace TCGEngine2 {
 	{
 	}
 
+	void Application::PushLayer(Layer * layer) 
+	{
+
+		m_LayerStack.PushLayer(layer);
+
+	}
+
+	void Application::PushOverlay(Layer * overlay)
+	{
+
+		m_LayerStack.PushOverlay(overlay);
+
+	}
+
+
+
 	void Application::Run() {
 
 		while (m_Running) 
@@ -28,6 +44,9 @@ namespace TCGEngine2 {
 			glClear(GL_COLOR_BUFFER_BIT);
 			m_Window->OnUpdate();
 		
+			for (Layer* layer : m_LayerStack)
+				layer->OnUpdate();
+
 		}
 	}
 	void Application::OnEvent(Event& event)
@@ -35,7 +54,14 @@ namespace TCGEngine2 {
 		EventDispatcher dispatcher(event);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
 
-		TCGE_CORE_TRACE("{0}", event);
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+
+			(*--it)->OnEvent(event);
+			if (event.Handled)
+				break;
+
+		}
 
 	}
 	bool Application::OnWindowClose(WindowCloseEvent & event)
