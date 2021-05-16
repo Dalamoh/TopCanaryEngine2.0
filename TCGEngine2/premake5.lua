@@ -14,8 +14,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include dirs relative to root folder (sln dir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "TCGEngine2/vendor/GLFW/include"
+IncludeDir["Glad"] = "TCGEngine2/vendor/Glad/include"
 
 include "TCGEngine2/vendor/GLFW"
+include "TCGEngine2/vendor/Glad"
 
 
 project "TCGEngine2"
@@ -39,11 +41,13 @@ project "TCGEngine2"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "TCGEngine2"
 		defines
 		{
 			"TCGE_PLATFORM_WINDOWS",
-			"TCGE_BUILD_DLL"
+			"TCGE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

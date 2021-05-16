@@ -35,3 +35,6 @@
 TCGEngine2/bin
 TCGEngine2/bin-int
 *.ipch
+*.filters
+*.vcxproj
+TCGEngine2/TCGEngine2/vendor/Glad/bin-int/
