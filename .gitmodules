@@ -4,3 +4,6 @@
 [submodule "TCGEngine2/TCGEngine2\\vendor\\GLFW"]
 	path = TCGEngine2/TCGEngine2\\vendor\\GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "TCGEngine2/TCGEngine2/vendor/imgui"]
+	path = TCGEngine2/TCGEngine2/vendor/imgui
+	url = https://github.com/TheCherno/imgui

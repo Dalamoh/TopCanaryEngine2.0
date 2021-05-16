@@ -4,8 +4,12 @@
 
 #include "TCGEngine2/Application.h"
 
-//------ Layers -------------------
+//------ Layers ----------------
 #include "TCGEngine2/Layer.h"
+//------------------------------
+
+//------ ImGui -----------------
+#include "TCGEngine2/ImGui/ImGuiLayer.h"
 //------------------------------
 
 //------ Log -------------------

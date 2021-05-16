@@ -22,6 +22,9 @@ namespace TCGEngine2 {
 
 		void PushLayer(Layer * layer);
 		void PushOverlay(Layer * overlay);
+
+		inline static Application& Get() { return *s_Instance; };
+		inline Window& GetWindow() { return *m_Window; };
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& event);
@@ -30,6 +33,7 @@ namespace TCGEngine2 {
 		bool m_Running = true;
 
 		LayerStack m_LayerStack;
+		static Application* s_Instance;
 	};
 
 
